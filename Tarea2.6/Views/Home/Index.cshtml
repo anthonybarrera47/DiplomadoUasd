@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Tarea2._6.Models.Peliculas>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <table class="table">
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Titulo
+            </th>
+            <th>
+                Director
+            </th>
+            <th>
+                Autor Principal
+            </th>
+            <th>
+                Num. Autores
+            </th>
+            <th>
+                Duracion
+            </th>
+            <th>
+                Estreno
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Codigo
+                </td>
+                <td>
+                    @item.Titulo
+                </td>
+                <td>
+                    @item.Director
+                </td>
+                <td>
+                    @item.AutorPrincipal
+                </td>
+                <td>
+                    @item.numAutores
+                </td>
+                <td>
+                    @item.Duracion
+                </td>
+                <td>
+                    @item.Estreno
+                </td>
+                <td>
+                    <a href="/Home/Borra?cod=@item.Codigo">Borra?</a>
+                </td>
+                <td>
+                    <a href="/Home/Modificacion?cod=@item.Codigo">Modifica?</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a href="~/Views/Home/Alta">Agregar</a>
+    <div>
+    </div>
+</body>
+</html>
